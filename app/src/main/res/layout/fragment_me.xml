@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingStart="20dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="14dp"
+                android:src="@drawable/ic_setting" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_user_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="22dp"
+                    android:src="@drawable/img_def_avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_user_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_arrow_right_dddddd"
+                    app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+                <TextView
+                    android:id="@+id/tv_nick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:singleLine="true"
+                    android:text="--"
+                    android:textColor="@color/color_454444"
+                    app:layout_constraintEnd_toStartOf="@id/iv_user_arrow"
+                    app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                    app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+                <ImageView
+                    android:id="@+id/iv_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintStart_toStartOf="@id/tv_nick"
+                    app:layout_constraintTop_toBottomOf="@id/tv_nick"
+                    tools:src="@drawable/ic_job_dmz" />
+
+                <TextView
+                    android:id="@+id/tv_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/shape_fcab00_frame"
+                    android:gravity="center"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:textColor="@color/color_fbb100"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_job"
+                    app:layout_constraintStart_toEndOf="@id/iv_job"
+                    tools:text="LV. R6" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_nick"
+                    app:layout_constraintTop_toBottomOf="@id/iv_job" />
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="--\--"
+                    android:textColor="@color/color_747474"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_nick"
+                    app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp">
+
+                    <TextView
+                        android:id="@+id/tv_friends"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/shape_d8d8d8_frame"
+                        android:drawableEnd="@drawable/ic_me_friends"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:text="我的伙伴"
+                        android:textColor="@color/color_454444"
+                        android:textSize="14sp"
+                        app:layout_constraintDimensionRatio="h,159:58"
+                        app:layout_constraintEnd_toStartOf="@id/tv_client"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_client"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/shape_d8d8d8_frame"
+                        android:drawableEnd="@drawable/ic_me_client"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:text="我的伙伴"
+                        android:textColor="@color/color_454444"
+                        android:textSize="14sp"
+                        app:layout_constraintDimensionRatio="h,159:58"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_friends"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/dy_color_divider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

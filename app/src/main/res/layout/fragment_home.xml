@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f6f6f6"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.youth.banner.Banner
+                android:id="@+id/top_banner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view_menu"
+                app:layout_constraintDimensionRatio="h,323:171"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/center_banner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_banner"
+                app:spanCount="4" />
+
+            <com.youth.banner.Banner
+                android:id="@+id/center_banner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/iv_card_left"
+                app:layout_constraintDimensionRatio="h,323:0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_menu"
+                app:layout_goneMarginTop="0dp" />
+
+            <ImageView
+                android:id="@+id/iv_card_left"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/img_home_card_left"
+                app:layout_constraintDimensionRatio="h,166:81"
+                app:layout_constraintEnd_toStartOf="@id/iv_card_right"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/center_banner" />
+
+            <ImageView
+                android:id="@+id/iv_card_right"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/img_home_card_right"
+                app:layout_constraintDimensionRatio="h,166:81"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/iv_card_left"
+                app:layout_constraintTop_toTopOf="@id/iv_card_left" />
+
+            <TextView
+                android:id="@+id/tv_trade_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:text="交易数据"
+                android:textColor="@color/color_2d2d2d"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_card_left" />
+
+            <TextView
+                android:id="@+id/tv_trade_yesterday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="昨日"
+                android:textColor="@color/color_select_bbbbbb_0187fd"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_trade_title"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <View
+                android:id="@+id/divider_trade_top"
+                android:layout_width="1dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/color_f6f7f9"
+                app:layout_constraintBottom_toBottomOf="@id/tv_trade_yesterday"
+                app:layout_constraintEnd_toStartOf="@id/tv_trade_yesterday"
+                app:layout_constraintTop_toTopOf="@id/tv_trade_yesterday" />
+
+            <TextView
+                android:id="@+id/tv_trade_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="团队"
+                android:textColor="@color/color_select_bbbbbb_0187fd"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_trade_yesterday"
+                app:layout_constraintEnd_toStartOf="@id/divider_trade_top" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_trade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_trade_title" />
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/color_f6f7f9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vp_trade" />
+
+            <TextView
+                android:id="@+id/tv_machine_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="机具数据"
+                android:textColor="@color/color_2d2d2d"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_1" />
+
+            <TextView
+                android:id="@+id/tv_last_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="上月"
+                android:textColor="@color/color_select_bbbbbb_0187fd"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_machine_title"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <View
+                android:id="@+id/divider_machine_top"
+                android:layout_width="1dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/color_f6f7f9"
+                app:layout_constraintBottom_toBottomOf="@id/tv_last_month"
+                app:layout_constraintEnd_toStartOf="@id/tv_last_month"
+                app:layout_constraintTop_toTopOf="@id/tv_last_month" />
+
+            <TextView
+                android:id="@+id/tv_current_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="本月"
+                android:textColor="@color/color_select_bbbbbb_0187fd"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_last_month"
+                app:layout_constraintEnd_toStartOf="@id/divider_machine_top" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_machine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_machine_title" />
+
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/color_f6f7f9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vp_machine" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

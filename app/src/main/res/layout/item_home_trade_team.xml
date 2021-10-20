@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_segment_line"
+        android:drawablePadding="6dp"
+        android:text="团队累计激活(台)"
+        android:textColor="@color/color_2d2d2d"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/color_f6f7f9"
+        app:layout_constraintBottom_toTopOf="@id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_1" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="机具激活量"
+        android:textColor="@color/color_747474"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_title_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="激活码激活量"
+        android:textColor="@color/color_747474"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/divider3"
+        app:layout_constraintTop_toTopOf="@id/textView1" />
+
+    <TextView
+        android:id="@+id/tv_activation_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="14dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_454444"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/divider3"
+        app:layout_constraintStart_toStartOf="@id/textView1"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
+        tools:text="5424542454245424" />
+
+    <TextView
+        android:id="@+id/tv_code_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_454444"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/tv_activation_num"
+        tools:text="5424542454245424" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/color_f6f7f9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_activation_num" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="激活总量"
+        android:textColor="@color/color_747474"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_title_1"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <TextView
+        android:id="@+id/tv_activation_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_454444"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_activation_num"
+        app:layout_constraintStart_toStartOf="@id/tv_activation_num"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        tools:text="5424542454245424" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/color_f6f7f9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_activation_total" />
+
+    <TextView
+        android:id="@+id/tv_title_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_segment_line"
+        android:drawablePadding="6dp"
+        android:text="团队累计交易量(元)"
+        android:textColor="@color/color_2d2d2d"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/color_f6f7f9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="机具交易量"
+        android:textColor="@color/color_747474"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_title_2"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="激活码交易量"
+        android:textColor="@color/color_747474"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/divider4"
+        app:layout_constraintTop_toTopOf="@id/textView4" />
+
+    <TextView
+        android:id="@+id/tv_machine_trade_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="14dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_454444"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/divider4"
+        app:layout_constraintStart_toStartOf="@id/textView4"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        tools:text="5424542454245424" />
+
+    <TextView
+        android:id="@+id/tv_code_trade_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_454444"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView5"
+        app:layout_constraintTop_toTopOf="@id/tv_machine_trade_num"
+        tools:text="5424542454245424" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/color_f6f7f9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_machine_trade_num" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="交易总量"
+        android:textColor="@color/color_747474"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_title_2"
+        app:layout_constraintTop_toBottomOf="@id/divider5" />
+
+    <TextView
+        android:id="@+id/tv_trade_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/color_454444"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_machine_trade_num"
+        app:layout_constraintStart_toStartOf="@id/tv_machine_trade_num"
+        app:layout_constraintTop_toBottomOf="@id/textView6"
+        tools:text="5424542454245424" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

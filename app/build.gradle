@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId "cn.dianyinhuoban.app2"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 145
+        versionName "1.4.5"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    implementation project(':lib_base')
+    implementation project(':lib_http')
+    implementation project(':lib_tablayout')
+
+    implementation rootProject.ext.deps.material
+    implementation rootProject.ext.deps.appcompat
+    implementation rootProject.ext.deps.constraintLayout
+    implementation rootProject.ext.deps.recyclerView
+    implementation rootProject.ext.deps.cardview
+
+    implementation rootProject.ext.deps.eventBus
+    implementation rootProject.ext.deps.glide
+
+    implementation rootProject.ext.deps.rxAndroid
+    implementation rootProject.ext.deps.rxJava
+    implementation rootProject.ext.deps.retrofit
+    implementation rootProject.ext.deps.converterGson
+    implementation rootProject.ext.deps.adapterRxJava
+    implementation rootProject.ext.deps.okhttp3Logging
+
+    implementation rootProject.ext.deps.refreshLayoutBase
+    implementation rootProject.ext.deps.refreshLayoutHeader
+    implementation rootProject.ext.deps.refreshLayoutFooter
+
+    // 基础依赖包，必须要依赖
+    implementation rootProject.ext.deps.immersionbarBase
+    // fragment快速实现（可选）
+    implementation rootProject.ext.deps.immersionbarComponents
+
+    implementation 'io.github.youth5201314:banner:2.2.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+//    implementation 'cn.jiguang.sdk:jpush:3.1.5'  // 此处以JPush 3.1.5 版本为例。
+//    implementation 'cn.jiguang.sdk:jcore:1.2.3'  // 此处以JCore 1.2.3 版本为例。
+}

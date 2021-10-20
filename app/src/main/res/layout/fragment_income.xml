@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f6f7f9">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/img_income_page_bg"
+        app:layout_constraintDimensionRatio="h,1125:669"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_status_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_income_bg">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="22dp"
+                        android:text="账户总额(元)"
+                        android:textColor="@color/color_454444"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_total_balance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="16dp"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_454444"
+                        android:textSize="30sp"
+                        app:layout_constraintEnd_toStartOf="@id/tv_withdraw"
+                        app:layout_constraintStart_toStartOf="@id/textView1"
+                        app:layout_constraintTop_toBottomOf="@id/textView1"
+                        tools:text="1469.88" />
+
+                    <TextView
+                        android:id="@+id/tv_withdraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/shape_454444_radius_2"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="提现"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_total_balance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textView1" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:text="今日收益"
+                        android:textColor="@color/color_747474"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/textView1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_total_balance" />
+
+                    <TextView
+                        android:id="@+id/tv_income_today"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_f64b25"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/textView2" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/dy_color_divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="个人收益"
+                        android:textColor="@color/color_747474"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/divider2"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:background="@color/dy_color_divider"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_income_personal"
+                        app:layout_constraintEnd_toStartOf="@id/textView4"
+                        app:layout_constraintStart_toEndOf="@id/textView3"
+                        app:layout_constraintTop_toTopOf="@id/textView3" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="管理津贴"
+                        android:textColor="@color/color_747474"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView3"
+                        app:layout_constraintEnd_toStartOf="@id/divider3"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/divider2" />
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:background="@color/dy_color_divider"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_income_personal"
+                        app:layout_constraintEnd_toStartOf="@id/textView5"
+                        app:layout_constraintStart_toEndOf="@id/textView4"
+                        app:layout_constraintTop_toTopOf="@id/textView3" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="激活返现"
+                        android:textColor="@color/color_747474"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/divider3" />
+
+                    <TextView
+                        android:id="@+id/tv_income_personal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_454444"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/textView3"
+                        app:layout_constraintStart_toStartOf="@id/textView3"
+                        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+                    <TextView
+                        android:id="@+id/tv_income_manager"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_454444"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_income_personal"
+                        app:layout_constraintEnd_toEndOf="@id/textView4"
+                        app:layout_constraintStart_toStartOf="@id/textView4" />
+
+                    <TextView
+                        android:id="@+id/tv_income_cash_back"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_454444"
+                        android:textSize="14sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_income_personal"
+                        app:layout_constraintEnd_toEndOf="@id/textView5"
+                        app:layout_constraintStart_toStartOf="@id/textView5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_ffffff_radius_4">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="14dp"
+                        android:text="积分"
+                        android:textColor="@color/color_131C25"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_exchange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/shape_454444_radius_2"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="兑换"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/textView7"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textView6" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="积分兑换机具 ｜积分越多兑换越多"
+                        android:textColor="@color/color_747474"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tv_exchange"
+                        app:layout_constraintStart_toStartOf="@id/textView6"
+                        app:layout_constraintTop_toBottomOf="@id/textView6" />
+
+                    <View
+                        android:id="@+id/divider4"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/dy_color_divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="14dp"
+                        android:text="积分(电签)"
+                        android:textColor="@color/color_747474"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/textView9"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="积分(出票)"
+                        android:textColor="@color/color_747474"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/textView8" />
+
+                    <View
+                        android:id="@+id/divider5"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:background="@color/dy_color_divider"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_integral_dq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textView8" />
+
+                    <TextView
+                        android:id="@+id/tv_integral_dq"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_454444"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/textView8"
+                        app:layout_constraintStart_toStartOf="@id/textView8"
+                        app:layout_constraintTop_toBottomOf="@id/textView8" />
+
+                    <TextView
+                        android:id="@+id/tv_integral_cp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="--"
+                        android:textColor="@color/color_454444"
+                        android:textSize="18sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_integral_dq"
+                        app:layout_constraintEnd_toEndOf="@id/textView9"
+                        app:layout_constraintStart_toStartOf="@id/textView9" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_ffffff_radius_4"
+                    android:orientation="horizontal"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="14dp">
+
+                    <TextView
+                        android:id="@+id/tv_personal_income"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_income_personal"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="个人收益"
+                        android:textColor="@color/color_454444"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_manager"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_income_manager"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="管理津贴"
+                        android:textColor="@color/color_454444"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_cash_back"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_income_personal"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="激活返现"
+                        android:textColor="@color/color_454444"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_withdraw_record"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_income_withdraw_record"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="提现记录"
+                        android:textColor="@color/color_454444"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_bill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_income_bill"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="账单明细"
+                        android:textColor="@color/color_454444"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
