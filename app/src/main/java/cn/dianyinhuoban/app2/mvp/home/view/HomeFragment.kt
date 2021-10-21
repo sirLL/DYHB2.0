@@ -1,5 +1,6 @@
 package cn.dianyinhuoban.app2.mvp.home.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -17,6 +18,7 @@ import cn.dianyinhuoban.app2.mvp.home.view.adapter.BannerViewAdapter
 import cn.dianyinhuoban.app2.mvp.home.view.adapter.MachinePageAdapter
 import cn.dianyinhuoban.app2.mvp.home.view.adapter.MenuAdapter
 import cn.dianyinhuoban.app2.mvp.home.view.adapter.TradePageAdapter
+import cn.dianyinhuoban.app2.mvp.machine.view.BuyMachineActivity
 import cn.dianyinhuoban.app2.widget.dialog.SetRankDialog
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
@@ -164,32 +166,39 @@ class HomeFragment : BaseFragment<HomeContract.Presenter?>(), HomeContract.View 
      * 点击菜单
      */
     private fun onMenuClick(menuBean: HomeMenuItemBean) {
-//        when (menuBean.) {
-//            0 -> {
-//                //我的设备
-//            }
-//            1 -> {
-//                //数据分析
-//            }
-//            2 -> {
-//                //商户APP
-//            }
-//            3 -> {
-//                //机具领用
-//            }
-//            4 -> {
-//                //消息中心
-//            }
-//            5 -> {
-//                //活动公告
-//            }
-//            6 -> {
-//                //我的团队
-//            }
-//            7 -> {
-//                //我的客户
-//            }
-//        }
+        if ("1" == menuBean.type) {
+            //跳转原生页面
+            when (menuBean.tag) {
+                //0我的设备，1数据分析，2商户app，3机具领用，4消息中心，5活动公告，6我的团队，7我的客户
+                "0" -> {
+                    //我的设备
+                }
+                "1" -> {
+                    //1数据分析
+                }
+                "2" -> {
+                    //2商户app
+                }
+                "3" -> {
+                    //3机具领用
+                    startActivity(Intent(requireContext(), BuyMachineActivity::class.java))
+                }
+                "4" -> {
+                    //4消息中心
+                }
+                "5" -> {
+                    //5活动公告
+                }
+                "6" -> {
+                    //6我的团队
+                }
+                "7" -> {
+                    //7我的客户
+                }
+            }
+        } else if ("2" == menuBean.type) {
+            //跳转网页
+        }
     }
     /******************************************菜单 END********************************************/
 

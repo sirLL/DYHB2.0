@@ -3,4 +3,5 @@
     <string name="dy_edit_input_password">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._/=+@%#?</string>
     <string name="dy_edit_input_0zZ">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="dy_edit_input_aZ">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="dy_edit_input_09">0123456789</string>
 </resources>

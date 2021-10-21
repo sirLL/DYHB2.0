@@ -52,4 +52,42 @@ interface ApiService {
         @Field("id") id: String,
         @Field("token") token: String
     ): Observable<Response<HomeMenuBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Product/goodsType")
+    fun fetchMachineSort(
+        @Field("id") id: String,
+        @Field("token") token: String
+    ): Observable<Response<MachineSortBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/partner/index")
+    fun fetchMerchant(
+        @Field("id") id: String,
+        @Field("token") token: String
+    ): Observable<Response<UserInfoBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Product/index")
+    fun fetchMachine(
+        @Field("id") id: String,
+        @Field("token") token: String,
+        @Field("type") type: String
+    ): Observable<Response<MachineBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/partner/address")
+    fun fetchAddress(
+        @Field("id") id: String,
+        @Field("token") token: String
+    ): Observable<Response<AddressBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Activity/goodsList")
+    fun fetchExchangeMachine(
+        @Field("id") id: String,
+        @Field("token") token: String,
+        @Field("page") page: Int,
+        @Field("pagesize") pageSize: Int
+    ): Observable<Response<ExchangeMachineBean?>>
 }
