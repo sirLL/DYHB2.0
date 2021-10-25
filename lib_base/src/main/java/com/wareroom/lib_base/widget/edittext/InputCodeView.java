@@ -458,10 +458,10 @@ public class InputCodeView extends androidx.appcompat.widget.AppCompatEditText i
      */
     public interface OnCodeCompleteListener {
         //完成输入
-        void inputCodeComplete(String verificationCode);
+        void inputCodeComplete(String password);
 
         //未完成输入
-        void inputCodeInput(String verificationCode);
+        void inputCodeInput(String password);
     }
 
 

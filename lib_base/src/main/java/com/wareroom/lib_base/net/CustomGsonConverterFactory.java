@@ -58,8 +58,8 @@ public class CustomGsonConverterFactory extends Converter.Factory {
             try {
                 // 获取json中的code，对json进行预处理
                 JSONObject json = new JSONObject(body);
-                if (!json.has("return") || json.isNull("return")) {
-                    json.put("return", new JSONObject());
+                if (!json.has("returndata") || json.isNull("returndata")) {
+                    json.put("returndata", new JSONObject());
                 }
                 return adapter.fromJson(json.toString());
             } catch (Exception e) {
@@ -67,7 +67,7 @@ public class CustomGsonConverterFactory extends Converter.Factory {
                     if (e.getMessage().contains("string but was")) {
                         try {
                             JSONObject json = new JSONObject(body);
-                            json.put("return", "");
+                            json.put("returndata", "");
                             return adapter.fromJson(json.toString());
                         } catch (JSONException e1) {
                             e1.printStackTrace();
@@ -78,7 +78,7 @@ public class CustomGsonConverterFactory extends Converter.Factory {
                     } else if (e.getMessage().contains("BEGIN_ARRAY but was")) {
                         try {
                             JSONObject json = new JSONObject(body);
-                            json.put("return", new JSONArray());
+                            json.put("returndata", new JSONArray());
                             return adapter.fromJson(json.toString());
                         } catch (JSONException e1) {
                             e1.printStackTrace();
@@ -89,7 +89,7 @@ public class CustomGsonConverterFactory extends Converter.Factory {
                     } else if (e.getMessage().contains("NUMBER but was")) {
                         try {
                             JSONObject json = new JSONObject(body);
-                            json.put("return", 0);
+                            json.put("returndata", 0);
                             return adapter.fromJson(json.toString());
                         } catch (JSONException e1) {
                             e1.printStackTrace();
@@ -105,7 +105,7 @@ public class CustomGsonConverterFactory extends Converter.Factory {
                     JSONObject jsonObject = new JSONObject();
                     try {
                         JSONArray jsonArray = new JSONArray(body);
-                        jsonObject.put("return", jsonArray);
+                        jsonObject.put("returndata", jsonArray);
                         return adapter.fromJson(jsonObject.toString());
                     } catch (JSONException e1) {
                         e1.printStackTrace();

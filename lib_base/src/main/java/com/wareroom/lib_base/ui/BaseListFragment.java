@@ -34,7 +34,8 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
     protected RecyclerView mRecyclerView;
     protected SimpleAdapter<T> mAdapter;
 
-    protected static final int DEF_START_PAGE = 1;
+    protected static final int DEF_START_PAGE = 0;
+    protected static final int DEF_PAGE_SIZE = 20;
     protected int mCurrentPage = DEF_START_PAGE;
     private boolean isLoadMore = false;
 
@@ -61,6 +62,7 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
             mRefreshLayout.setOnLoadMoreListener(this);
             mRefreshLayout.setRefreshFooter(getLoadMoreFooter());
         }
+        mRefreshLayout.autoRefresh();
     }
 
     protected RecyclerView.LayoutManager getLayoutManager() {

@@ -1,6 +1,8 @@
 
 package com.wareroom.lib_base.mvp;
 
+import android.util.Log;
+
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
@@ -56,6 +58,7 @@ public abstract class BasePresenter<M extends IModel, V extends IView> implement
     }
 
     protected void handleError(ApiException e) {
+        Log.d(TAG, "handleError: e="+e.getDisplayMessage());
         if (e == null || isDestroy) return;
         getView().hideLoading();
         if ("000012".equals(e.getCode())) {

@@ -1,6 +1,7 @@
 package cn.dianyinhuoban.app2.mvp.machine.presenter
 
 import cn.dianyinhuoban.app2.bean.AddressBean
+import cn.dianyinhuoban.app2.bean.EmptyBean
 import cn.dianyinhuoban.app2.bean.ExchangeMachineBean
 import cn.dianyinhuoban.app2.mvp.machine.contract.ExchangeContract
 import cn.dianyinhuoban.app2.mvp.machine.model.ExchangeModel
@@ -59,6 +60,38 @@ class ExchangePresenter(view: ExchangeContract.View) :
                             if (!isDisposed) {
                                 view?.hideLoading()
                                 view?.bindExchangeMachine(t)
+                            }
+                        }
+                    })
+            }
+        }
+    }
+
+    override fun submitExchangeMachine(
+        count: String,
+        type: String,
+        name: String,
+        phone: String,
+        address: String,
+        password: String
+    ) {
+        if (!isDestroy) {
+            view?.showLoading()
+            mModel?.let {
+                it.submitExchangeMachine(count, type, name, phone, address, password)
+                    .compose(SchedulerProvider.getInstance().applySchedulers())
+                    .compose(ResponseTransformer.handleResult())
+                    .subscribeWith(object : CustomResourceSubscriber<List<EmptyBean?>?>() {
+                        override fun onError(exception: ApiException?) {
+                            view?.hideLoading()
+                            handleError(exception)
+                        }
+
+                        override fun onNext(t: List<EmptyBean?>) {
+                            super.onNext(t)
+                            if (!isDisposed) {
+                                view?.hideLoading()
+                                view?.onSubmitExchangeSuccess()
                             }
                         }
                     })

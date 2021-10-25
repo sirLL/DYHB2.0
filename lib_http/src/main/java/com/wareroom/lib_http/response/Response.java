@@ -7,7 +7,7 @@ public class Response<T> {
     private String code;    // 返回的code
     @SerializedName("returndata")
     private T data;      // 具体的数据结果
-    private String msg;  // message 可用来返回接口的说明
+    private String message;  // message 可用来返回接口的说明
 
     public String getCode() {
         return code;
@@ -26,10 +26,10 @@ public class Response<T> {
     }
 
     public String getMsg() {
-        return msg;
+        return message;
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
+        this.message = msg;
     }
 }

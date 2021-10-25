@@ -90,4 +90,47 @@ interface ApiService {
         @Field("page") page: Int,
         @Field("pagesize") pageSize: Int
     ): Observable<Response<ExchangeMachineBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/partner/addressdefault")
+    fun submitDefAddress(
+        @Field("id") id: String,
+        @Field("token") token: String,
+        @Field("addressid") addressID: String
+    ): Observable<Response<EmptyBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/partner/addressdelete")
+    fun deleteAddress(
+        @Field("id") id: String,
+        @Field("token") token: String,
+        @Field("addressid") addressID: String
+    ): Observable<Response<EmptyBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/partner/addressmodify")
+    fun submitAddress(
+        @Field("id") id: String,
+        @Field("token") token: String,
+        @Field("addressid") addressID: String,
+        @Field("contact") name: String,
+        @Field("mobile") phone: String,
+        @Field("area") area: String,
+        @Field("address") address: String,
+        @Field("isdefault") isDefault: String
+    ): Observable<Response<EmptyBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Activity/itgExchange")
+    fun submitExchangeMachine(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("exchange") num: String,
+        @Field("type") type: String,
+        @Field("contact") name: String,
+        @Field("telephone") phone: String,
+        @Field("address") address: String,
+        @Field("password") password: String
+    ): Observable<Response<List<EmptyBean?>?>>
+
 }

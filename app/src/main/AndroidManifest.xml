@@ -26,11 +26,19 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DYHB">
-        <!--机具兑换-->
+        <!--添加、修改地址-->
+        <activity
+            android:name=".mvp.me.view.AddressEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.me.view.AddressActivity"
+            android:screenOrientation="portrait" /> <!-- 机具兑换 机具选择 -->
+        <activity
+            android:name=".mvp.machine.view.ExchangeMachinePickerActivity"
+            android:screenOrientation="portrait" /> <!-- 机具兑换 -->
         <activity
             android:name=".mvp.machine.view.ExchangeActivity"
-            android:screenOrientation="portrait" />
-        <!-- 机具领用 -->
+            android:screenOrientation="portrait" /> <!-- 机具领用 -->
         <activity
             android:name=".mvp.machine.view.BuyMachineActivity"
             android:screenOrientation="portrait" />

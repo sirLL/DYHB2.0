@@ -1,9 +1,13 @@
 package cn.dianyinhuoban.app2.bean
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 data class ExchangeMachineBean(
     var list: List<ExchangeMachineItemBean>?
 )
 
+@Parcelize
 data class ExchangeMachineItemBean(
     var favorable_name: String?,
     var favorable_num: Int?,
@@ -15,4 +19,4 @@ data class ExchangeMachineItemBean(
     var name: String?,
     var price: String?,
     var type: Int?
-)
+) : Parcelable
