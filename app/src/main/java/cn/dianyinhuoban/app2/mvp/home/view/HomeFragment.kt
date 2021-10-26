@@ -178,6 +178,7 @@ class HomeFragment : BaseFragment<HomeContract.Presenter?>(), HomeContract.View 
                 }
                 "2" -> {
                     //2商户app
+                    startActivity(Intent(requireContext(), ShopCodeActivity::class.java))
                 }
                 "3" -> {
                     //3机具领用

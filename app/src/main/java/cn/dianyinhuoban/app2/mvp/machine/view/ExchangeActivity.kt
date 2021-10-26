@@ -62,6 +62,14 @@ class ExchangeActivity : BaseActivity<ExchangeContract.Presenter?>(), ExchangeCo
         EventBus.getDefault().register(this)
         setContentView(R.layout.activity_exchange)
         setTitle("兑换")
+        setRightButtonText("兑换记录") {
+            startActivity(
+                Intent(
+                    this,
+                    ExchangeRecordActivity::class.java
+                )
+            )
+        }
         initView()
         fetchAddress()
         fetchExchangeMachine()

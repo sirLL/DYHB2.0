@@ -26,7 +26,17 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DYHB">
-        <!--添加、修改地址-->
+        <!--商户APP-->
+        <activity
+            android:name=".mvp.home.view.ShopCodeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 兑换记录详情 -->
+        <activity
+            android:name=".mvp.machine.view.ExchangeRecordDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 兑换记录 -->
+        <activity
+            android:name=".mvp.machine.view.ExchangeRecordActivity"
+            android:screenOrientation="portrait" /> <!-- 添加、修改地址 -->
         <activity
             android:name=".mvp.me.view.AddressEditActivity"
             android:screenOrientation="portrait" />

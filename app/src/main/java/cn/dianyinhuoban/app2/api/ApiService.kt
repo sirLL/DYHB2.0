@@ -133,4 +133,20 @@ interface ApiService {
         @Field("password") password: String
     ): Observable<Response<List<EmptyBean?>?>>
 
+    @FormUrlEncoded
+    @POST("v4/Activity/exchangeList")
+    fun fetchExchangeRecord(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("page") page: Int,
+        @Field("pagesize") pageSize: Int
+    ): Observable<Response<ExchangeRecordBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/system/appList")
+    fun fetchShopApp(
+        @Field("id") uid: String,
+        @Field("token") token: String
+    ): Observable<Response<ShopAppBean?>>
+
 }
