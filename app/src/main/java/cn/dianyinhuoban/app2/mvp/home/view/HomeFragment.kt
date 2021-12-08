@@ -19,6 +19,7 @@ import cn.dianyinhuoban.app2.mvp.home.view.adapter.MachinePageAdapter
 import cn.dianyinhuoban.app2.mvp.home.view.adapter.MenuAdapter
 import cn.dianyinhuoban.app2.mvp.home.view.adapter.TradePageAdapter
 import cn.dianyinhuoban.app2.mvp.machine.view.BuyMachineActivity
+import cn.dianyinhuoban.app2.mvp.machine.view.MyMachineActivity
 import cn.dianyinhuoban.app2.widget.dialog.SetRankDialog
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
@@ -172,6 +173,7 @@ class HomeFragment : BaseFragment<HomeContract.Presenter?>(), HomeContract.View 
                 //0我的设备，1数据分析，2商户app，3机具领用，4消息中心，5活动公告，6我的团队，7我的客户
                 "0" -> {
                     //我的设备
+                    startActivity(Intent(requireContext(), MyMachineActivity::class.java))
                 }
                 "1" -> {
                     //1数据分析

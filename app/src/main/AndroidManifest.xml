@@ -26,11 +26,23 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DYHB">
-        <!--商户APP-->
+        <!--    数据分析    -->
+        <activity
+            android:name=".mvp.data_analysis.view.DataAnalysisActivity"
+            android:screenOrientation="portrait" />
+        <!-- 划分记录 -->
+        <activity
+            android:name=".mvp.machine.view.MachineTransferRecordActivity"
+            android:screenOrientation="portrait" /> <!-- 激活码费率 -->
+        <activity
+            android:name=".mvp.machine.view.MyMachineDYFRateActivity"
+            android:screenOrientation="portrait" /> <!-- 我的设备 -->
+        <activity
+            android:name=".mvp.machine.view.MyMachineActivity"
+            android:screenOrientation="portrait" /> <!-- 商户APP -->
         <activity
             android:name=".mvp.home.view.ShopCodeActivity"
-            android:screenOrientation="portrait" />
-        <!-- 兑换记录详情 -->
+            android:screenOrientation="portrait" /> <!-- 兑换记录详情 -->
         <activity
             android:name=".mvp.machine.view.ExchangeRecordDetailActivity"
             android:screenOrientation="portrait" /> <!-- 兑换记录 -->
@@ -57,6 +69,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".mvp.login.view.LoginActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

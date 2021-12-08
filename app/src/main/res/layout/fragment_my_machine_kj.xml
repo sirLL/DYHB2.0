@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/img_machine_kj_bg">
+
+                    <ImageView
+                        android:id="@+id/iv_qr"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_available"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="8dp"
+                        android:text="可使用次数: --"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/divider1"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/iv_qr"
+                        app:layout_constraintTop_toTopOf="@id/iv_qr" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="1dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#1AFFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_available"
+                        app:layout_constraintEnd_toStartOf="@id/tv_invited"
+                        app:layout_constraintStart_toEndOf="@id/tv_available"
+                        app:layout_constraintTop_toTopOf="@id/tv_available" />
+
+                    <TextView
+                        android:id="@+id/tv_invited"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="36dp"
+                        android:text="已邀请人数: --"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_available"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/divider1" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="26dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_qr"
+                        app:layout_constraintTop_toBottomOf="@id/tv_available" />
+
+                    <Button
+                        android:id="@+id/btn_use"
+                        style="@style/SubmitButton"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/shape_ffffff_radius_20"
+                        android:text="立即使用"
+                        android:textColor="@color/color_2b47f3"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_qr" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.wareroom.lib_base.widget.LoadingLayout
+                    android:id="@+id/load_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+                </com.wareroom.lib_base.widget.LoadingLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

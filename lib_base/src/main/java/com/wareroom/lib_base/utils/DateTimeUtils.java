@@ -24,6 +24,7 @@ public class DateTimeUtils {
 
     public final static String PATTERN_YYYY_MM_DD = "yyyy-MM-dd";
     public final static String PATTERN_YYYY_MM_DD_CHAR = "yyyy年MM月dd日";
+    public final static String PATTERN_YYYY_MM_DD_HH_MM_CHAR = "yyyy年MM月dd日 HH:mm";
 
     public final static String PATTERN_YYYY_MM_DD_HH_MM = "yyyy-MM-dd HH:mm";
     public final static String PATTERN_YYYY_MM = "yyyy-MM";

@@ -18,6 +18,7 @@ import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 import com.wareroom.lib_base.R;
 import com.wareroom.lib_base.mvp.IPresenter;
+import com.wareroom.lib_base.ui.adapter.MultiAdapter;
 import com.wareroom.lib_base.ui.adapter.SimpleAdapter;
 import com.wareroom.lib_base.utils.DimensionUtils;
 import com.wareroom.lib_base.utils.NetWorksUtils;
@@ -27,12 +28,12 @@ import com.wareroom.lib_base.widget.LoadingLayout;
 import java.util.List;
 
 
-public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFragment<P>
+public abstract class BaseMultiListFragment<T, P extends IPresenter> extends BaseFragment<P>
         implements OnRefreshListener, OnLoadMoreListener, LoadingLayout.OnViewClickListener {
     protected LoadingLayout mLoadingLayout;
     protected SmartRefreshLayout mRefreshLayout;
     protected RecyclerView mRecyclerView;
-    protected SimpleAdapter<T> mAdapter;
+    protected MultiAdapter<T> mAdapter;
 
     protected static final int DEF_START_PAGE = 0;
     protected static final int DEF_PAGE_SIZE = 20;
@@ -97,7 +98,7 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
                 DimensionUtils.dp2px(getContext(), 1));
     }
 
-    protected void autoRefresh() {
+    protected void autoRefresh(){
         if (isSupportRefresh()) {
             mRefreshLayout.autoRefresh();
         }
@@ -147,15 +148,25 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
 
 
     private void initAdapter() {
-        mAdapter = new SimpleAdapter<T>(getItemLayout()) {
+        mAdapter = new MultiAdapter<T>() {
             @Override
-            public void convert(SimpleViewHolder viewHolder, int position, T itemData) {
-                BaseListFragment.this.convert(viewHolder, position, itemData);
+            public int getItemViewType(int position, T itemData) {
+                return BaseMultiListFragment.this.getItemViewType(position, itemData);
             }
 
             @Override
-            public void onItemClick(T data, int position) {
-                BaseListFragment.this.onItemClick(data, position);
+            public int getItemLayout(int viewType) {
+                return BaseMultiListFragment.this.getItemLayout(viewType);
+            }
+
+            @Override
+            public void convert(SimpleViewHolder viewHolder, int position, int viewType, T itemData) {
+                BaseMultiListFragment.this.convert(viewHolder, position, viewType, itemData);
+            }
+
+            @Override
+            public void onItemClick(T data, int position, int viewType) {
+                BaseMultiListFragment.this.onItemClick(data, position, viewType);
             }
         };
     }
@@ -205,9 +216,11 @@ public abstract class BaseListFragment<T, P extends IPresenter> extends BaseFrag
     protected abstract void onRequest(int page);
 
     protected abstract @LayoutRes
-    int getItemLayout();
+    int getItemLayout(int viewType);
 
-    protected abstract void convert(SimpleAdapter.SimpleViewHolder viewHolder, int position, T itemData);
+    protected abstract void convert(MultiAdapter.SimpleViewHolder viewHolder, int position, int viewType, T itemData);
 
-    protected abstract void onItemClick(T data, int position);
+    protected abstract int getItemViewType(int position, T itemData);
+
+    protected abstract void onItemClick(T data, int position, int viewType);
 }

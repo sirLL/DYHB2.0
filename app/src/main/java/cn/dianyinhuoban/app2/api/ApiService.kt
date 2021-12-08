@@ -149,4 +149,63 @@ interface ApiService {
         @Field("token") token: String
     ): Observable<Response<ShopAppBean?>>
 
+    /**
+     * @param type 1未激活，2已激活，3未绑定客户电话，4已绑定客户电话
+     */
+    @FormUrlEncoded
+    @POST("v4/act/index")
+    fun fetchMyMachinePOS(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("page") page: Int,
+        @Field("pagesize") pageSize: Int,
+        @Field("keyword") keyword: String,
+        @Field("type") type: String
+    ): Observable<Response<MyMachinePOSBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/code/code_list")
+    fun fetchMyMachineDYF(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("page") page: Int,
+        @Field("pagesize") pageSize: Int,
+        @Field("type") type: String
+    ): Observable<Response<MyMachineDYFBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/code/rate_info")
+    fun fetchMyDYFRate(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("rateid") rateID: String
+    ): Observable<Response<MyMachineDYFRateBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Product/vfMemberList")
+    fun fetchMyMachineKJ(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("page") page: Int,
+        @Field("pagesize") pageSize: Int
+    ): Observable<Response<MyMachineKJBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Product/transfer")
+    fun submitTransfer(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("type") type: String,
+        @Field("num") num: String,
+        @Field("underid") underid: String
+    ): Observable<Response<EmptyBean?>>
+
+    @FormUrlEncoded
+    @POST("v4/Product/vfTransferList")
+    fun fetchTransferRecord(
+        @Field("id") uid: String,
+        @Field("token") token: String,
+        @Field("page") page: Int,
+        @Field("pagesize") pageSize: Int
+    ): Observable<Response<MachineTransferRecordBean?>>
 }

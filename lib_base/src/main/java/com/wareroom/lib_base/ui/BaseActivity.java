@@ -46,6 +46,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         super.onCreate(savedInstanceState);
         AppManager.getInstance().addActivity(this);
         initRootView();
+        initStatusBar();
         handleIntent(getIntent().getExtras());
         mPresenter = getPresenter();
     }
@@ -78,12 +79,11 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
      */
     protected void initStatusBar() {
         ImmersionBar.with(this)
-                .statusBarColor(getStatusBarColor())
+                .transparentStatusBar()
                 .autoDarkModeEnable(isDarkModeEnable())
                 .autoStatusBarDarkModeEnable(isDarkModeEnable())
                 .statusBarDarkFont(true)
                 .flymeOSStatusBarFontColor(R.color.black)
-                .reset()
                 .init();
     }
 

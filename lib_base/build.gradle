@@ -52,7 +52,7 @@ dependencies {
     /***********************************************************************************/
 
     //Toast
-    implementation 'com.github.getActivity:ToastUtils:9.5'
+    api 'com.github.getActivity:ToastUtils:9.5'
     //MMKV
     implementation 'com.tencent:mmkv-static:1.2.10'
 
